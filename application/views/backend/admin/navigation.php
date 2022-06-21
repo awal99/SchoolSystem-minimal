@@ -247,68 +247,7 @@
                     </li>
                 </ul>
             </li>
-
-            <!-- PAYMENT -->
-            <li class="nav-item <?php if ($page_name == 'invoice') echo 'active'; ?> ">
-                <a href="<?php echo base_url(); ?>index.php?admin/invoice">
-                    <i class="entypo-credit-card"></i>
-                    <span><?php echo ucwords(get_phrase('payment')); ?></span>
-                </a>
-            </li>
-
-            <!-- ACCOUNTING -->
-            <li class="nav-item dropdown <?php
-            if ($page_name == 'income' ||
-                    $page_name == 'expense' ||
-                        $page_name == 'expense_category')
-                            echo 'opened active';
-            ?> ">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="entypo-suitcase"></i>
-                    <span><?php echo ucwords(get_phrase('accounting')); ?><i class="entypo-right"></i></span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li class="dropdown-item <?php if ($page_name == 'income') echo 'active'; ?> ">
-                        <a href="<?php echo base_url(); ?>index.php?admin/income">
-                            <span><i class="entypo-dot"></i> <?php echo ucwords(get_phrase('income')); ?></span>
-                        </a>
-                    </li>
-                    <li class="dropdown-item <?php if ($page_name == 'expense') echo 'active'; ?> ">
-                        <a href="<?php echo base_url(); ?>index.php?admin/expense">
-                            <span><i class="entypo-dot"></i> <?php echo ucwords(get_phrase('expense')); ?></span>
-                        </a>
-                    </li>
-                    <li class="dropdown-item <?php if ($page_name == 'expense_category') echo 'active'; ?> ">
-                        <a href="<?php echo base_url(); ?>index.php?admin/expense_category">
-                            <span><i class="entypo-dot"></i> <?php echo ucwords(get_phrase('expense_category')); ?></span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-             <!-- INVENTORY -->
-             <li class="nav-item <?php if ($page_name == 'inventory') echo 'active'; ?> ">
-                <a href="<?php echo base_url(); ?>index.php?admin/inventory">
-                    <i class="entypo-credit-card"></i>
-                    <span><?php echo ucwords(get_phrase('inventory')); ?></span>
-                </a>
-            </li>
-
-            <!-- LIBRARY -->
-            <li class="nav-item <?php if ($page_name == 'book') echo 'active'; ?> ">
-                <a href="<?php echo base_url(); ?>index.php?admin/book">
-                    <i class="entypo-book"></i>
-                    <span><?php echo ucwords(get_phrase('library')); ?></span>
-                </a>
-            </li>
-
-            <!-- TRANSPORT -->
-            <li class="nav-item <?php if ($page_name == 'transport') echo 'active'; ?> ">
-                <a href="<?php echo base_url(); ?>index.php?admin/transport">
-                    <i class="entypo-location"></i>
-                    <span><?php echo ucwords(get_phrase('transport')); ?></span>
-                </a>
-            </li>
+         
 
             <!-- DORMITORY -->
             <li class="nav-item <?php if ($page_name == 'dormitory') echo 'active'; ?> ">
@@ -370,13 +309,7 @@
                 </ul>
             </li>
 
-            <!-- ACCOUNT -->
-            <li class="nav-item <?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-                <a href="<?php echo base_url(); ?>index.php?admin/manage_profile">
-                    <i class="entypo-lock"></i>
-                    <span><?php echo ucwords(get_phrase('account')); ?></span>
-                </a>
-            </li>
+     
 
         </ul>
 

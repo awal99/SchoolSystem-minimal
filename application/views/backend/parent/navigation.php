@@ -77,25 +77,6 @@
                     </ul>
                 </li>
 
-                <!-- PAYMENT -->
-                <li class="nav-item dropdown <?php if ($page_name == 'invoice') echo 'opened active';?> ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="entypo-credit-card"></i>
-                        <span><?php echo get_phrase('payment'); ?><i class="entypo-right"></i></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <?php 
-                        foreach ($children_of_parent as $row):
-                    ?>
-                        <li class="dropdwon-content ">
-                            <a href="<?php echo base_url(); ?>index.php?parents/invoice/<?php echo urlencode($row['student_id']);?>">
-                                <span><i class="entypo-dot"></i> <?php echo $row['name'];?></span>
-                            </a>
-                        </li>
-                    <?php endforeach;?>
-                    </ul>
-                </li>
-
 
                 <!-- LIBRARY -->
                 <li class="nav-item <?php if ($page_name == 'book') echo 'active'; ?> ">
@@ -105,13 +86,6 @@
                     </a>
                 </li>
 
-                <!-- TRANSPORT -->
-                <li class="nav-item <?php if ($page_name == 'transport') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?parents/transport">
-                        <i class="entypo-location"></i>
-                        <span><?php echo get_phrase('transport'); ?></span>
-                    </a>
-                </li>
 
                 <!-- NOTICEBOARD -->
                 <li class="nav-item <?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
@@ -126,14 +100,6 @@
                     <a href="<?php echo base_url(); ?>index.php?parents/message">
                         <i class="entypo-mail"></i>
                         <span><?php echo get_phrase('message'); ?></span>
-                    </a>
-                </li>
-
-                <!-- ACCOUNT -->
-                <li class="nav-item <?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?parents/manage_profile">
-                        <i class="entypo-lock"></i>
-                        <span><?php echo get_phrase('account'); ?></span>
                     </a>
                 </li>
 

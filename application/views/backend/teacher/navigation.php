@@ -201,14 +201,7 @@
                         </a>
                     </li>
 
-                    <!-- TRANSPORT -->
-                    <li class="nav-item <?php if ($page_name == 'transport') echo 'active'; ?> ">
-                        <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/transport">
-                            <i class="entypo-location"></i>
-                            <span><?php echo get_phrase('transport'); ?></span>
-                        </a>
-                    </li>
-
+                   
                     <!-- NOTICEBOARD -->
                     <li class="nav-item <?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
                         <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/noticeboard">
@@ -225,14 +218,7 @@
                         </a>
                     </li>
 
-                    <!-- ACCOUNT -->
-                    <li class="nav-item <?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-                        <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/manage_profile">
-                            <i class="entypo-lock"></i>
-                            <span><?php echo get_phrase('account'); ?></span>
-                        </a>
-                    </li>
-
+                   
                 </ul>
       </div>
 

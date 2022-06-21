@@ -83,28 +83,12 @@
                     </ul>
                 </li>
 
-                <!-- PAYMENT -->
-                <li class="nav-item <?php if ($page_name == 'invoice') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/invoice">
-                        <i class="entypo-credit-card"></i>
-                        <span><?php echo get_phrase('payment'); ?></span>
-                    </a>
-                </li>
-
 
                 <!-- LIBRARY -->
                 <li class="nav-item <?php if ($page_name == 'book') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/book">
                         <i class="entypo-book"></i>
                         <span><?php echo get_phrase('library'); ?></span>
-                    </a>
-                </li>
-
-                <!-- TRANSPORT -->
-                <li class="nav-item <?php if ($page_name == 'transport') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/transport">
-                        <i class="entypo-location"></i>
-                        <span><?php echo get_phrase('transport'); ?></span>
                     </a>
                 </li>
 
@@ -124,13 +108,7 @@
                     </a>
                 </li>
 
-                <!-- ACCOUNT -->
-                <li class="nav-item <?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/manage_profile">
-                        <i class="entypo-lock"></i>
-                        <span><?php echo get_phrase('account'); ?></span>
-                    </a>
-                </li>
+              
 
             </ul>
     </div>

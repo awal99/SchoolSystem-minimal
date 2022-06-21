@@ -1744,99 +1744,7 @@ class Admin extends CI_Controller
         echo '</div></div>';
     }
 
-    /**********ACCOUNTING********************/
-    function income($param1 = '' , $param2 = '')
-    {
-       if ($this->session->userdata('admin_login') != 1)
-            redirect(base_url(), 'refresh');
-        $page_data['page_name']  = 'income';
-        $page_data['page_title'] = get_phrase('incomes');
-        //$this->db->order_by('creation_timestamp', 'desc');
-        //$page_data['invoices'] = $this->db->get_where('invoice',array('school_id'=>$this->session->userdata('school')))->result_array();
-        $this->db->where('id',$this->session->userdata('school'));
-        $page_data['settings']   = $this->db->get('s_settings'); 
-        $this->load->view('backend/index', $page_data); 
-    }
-
-    function expense($param1 = '' , $param2 = '')
-    {
-        if ($this->session->userdata('admin_login') != 1)
-            redirect(base_url(), 'refresh');
-        if ($param1 == 'create') {
-            $data['title']               =   $this->input->post('title');
-            $data['expense_category_id'] =   $this->input->post('expense_category_id');
-            $data['description']         =   $this->input->post('description');
-            $data['payment_type']        =   'expense';
-            $data['method']              =   $this->input->post('method');
-            $data['amount']              =   $this->input->post('amount');
-            $data['timestamp']           =   strtotime($this->input->post('timestamp'));
-            $data['school_id']         =   $this->session->userdata('school');
-
-            $this->db->insert('payment' , $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
-            redirect(base_url() . 'index.php?admin/expense', 'refresh');
-        }
-
-        if ($param1 == 'edit') {
-            $data['title']               =   $this->input->post('title');
-            $data['expense_category_id'] =   $this->input->post('expense_category_id');
-            $data['description']         =   $this->input->post('description');
-            $data['payment_type']        =   'expense';
-            $data['method']              =   $this->input->post('method');
-            $data['amount']              =   $this->input->post('amount');
-            $data['timestamp']           =   strtotime($this->input->post('timestamp'));
-            $this->db->where('payment_id' , $param2);
-            $this->db->where('school_id',$this->session->userdata('school'));
-            $this->db->update('payment' , $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-            redirect(base_url() . 'index.php?admin/expense', 'refresh');
-        }
-
-        if ($param1 == 'delete') {
-            $this->db->where('payment_id' , $param2);
-            $this->db->delete('payment');
-            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
-            redirect(base_url() . 'index.php?admin/expense', 'refresh');
-        }
-
-        $page_data['page_name']  = 'expense';
-        $page_data['page_title'] = get_phrase('expenses');
-        $this->db->where('id',$this->session->userdata('school'));
-        $page_data['settings']   = $this->db->get('s_settings');
-        $this->load->view('backend/index', $page_data); 
-    }
-
-    function expense_category($param1 = '' , $param2 = '')
-    {
-        if ($this->session->userdata('admin_login') != 1)
-            redirect(base_url(), 'refresh');
-        if ($param1 == 'create') {
-            $data['name']   =   $this->input->post('name');
-            $this->db->insert('expense_category' , $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
-            redirect(base_url() . 'index.php?admin/expense_category');
-        }
-        if ($param1 == 'edit') {
-            $data['name']   =   $this->input->post('name');
-            $this->db->where('expense_category_id' , $param2);
-            $this->db->update('expense_category' , $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-            redirect(base_url() . 'index.php?admin/expense_category');
-        }
-        if ($param1 == 'delete') {
-            $this->db->where('expense_category_id' , $param2);
-            $this->db->delete('expense_category');
-            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
-            redirect(base_url() . 'index.php?admin/expense_category');
-        }
-
-        $page_data['page_name']  = 'expense_category';
-        $page_data['page_title'] = get_phrase('expense_category');
-        $this->db->where('id',$this->session->userdata('school'));
-        $page_data['settings']   = $this->db->get('s_settings');
-        $this->load->view('backend/index', $page_data);
-    }
-
+   
     /**********MANAGE LIBRARY / BOOKS********************/
     function book($param1 = '', $param2 = '', $param3 = '')
     {
@@ -1886,52 +1794,7 @@ class Admin extends CI_Controller
         $this->load->view('backend/index', $page_data);
         
     }
-    /**********MANAGE TRANSPORT / VEHICLES / ROUTES********************/
-    function transport($param1 = '', $param2 = '', $param3 = '')
-    {
-        if ($this->session->userdata('admin_login') != 1)
-            redirect(base_url(), 'refresh');
-        if ($param1 == 'create') {
-            $data['route_name']        = $this->input->post('route_name');
-            $data['number_of_vehicle'] = $this->input->post('number_of_vehicle');
-            $data['description']       = $this->input->post('description');
-            $data['route_fare']        = $this->input->post('route_fare');
-            $data['school_id']   = $this->session->userdata('school');
-
-            $this->db->insert('transport', $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_added_successfully'));
-            redirect(base_url() . 'index.php?admin/transport', 'refresh');
-        }
-        if ($param1 == 'do_update') {
-            $data['route_name']        = $this->input->post('route_name');
-            $data['number_of_vehicle'] = $this->input->post('number_of_vehicle');
-            $data['description']       = $this->input->post('description');
-            $data['route_fare']        = $this->input->post('route_fare');
-            
-            $this->db->where('transport_id', $param2);
-            $this->db->update('transport', $data);
-            $this->session->set_flashdata('flash_message' , get_phrase('data_updated'));
-            redirect(base_url() . 'index.php?admin/transport', 'refresh');
-        } else if ($param1 == 'edit') {
-            $page_data['edit_data'] = $this->db->get_where('transport', array(
-                'school_id' =>  $this->session->userdata('school'),
-                'transport_id' => $param2
-            ))->result_array();
-        }
-        if ($param1 == 'delete') {
-            $this->db->where('transport_id', $param2);
-            $this->db->delete('transport');
-            $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
-            redirect(base_url() . 'index.php?admin/transport', 'refresh');
-        }
-        $page_data['transports'] = $this->db->get_where('transport',array('school_id'=>$this->session->userdata('school')))->result_array();
-        $page_data['page_name']  = 'transport';
-        $page_data['page_title'] = get_phrase('manage_transport');
-        $this->db->where('id',$this->session->userdata('school'));
-        $page_data['settings']   = $this->db->get('s_settings');
-        $this->load->view('backend/index', $page_data);
-        
-    }
+   
     /**********MANAGE DORMITORY / HOSTELS / ROOMS ********************/
     function dormitory($param1 = '', $param2 = '', $param3 = '')
     {

@@ -825,20 +825,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $page_data);
         
     }
-    /**********MANAGE TRANSPORT / VEHICLES / ROUTES********************/
-    function transport($param1 = '', $param2 = '', $param3 = '')
-    {
-        if ($this->session->userdata('teacher_login') != 1)
-            redirect('login', 'refresh');
-        
-        $page_data['transports'] = $this->db->get_where('transport',array('school_id'=>$this->session->userdata('school')))->result_array();
-        $page_data['page_name']  = 'transport';
-        $page_data['page_title'] = get_phrase('manage_transport');
-        $this->db->where('id',$this->session->userdata('school'));
-        $page_data['settings']   = $this->db->get('s_settings');
-        $this->load->view('backend/index', $page_data);
-        
-    }
+   
     
     /***MANAGE EVENT / NOTICEBOARD, WILL BE SEEN BY ALL ACCOUNTS DASHBOARD**/
     function noticeboard($param1 = '', $param2 = '', $param3 = '')
