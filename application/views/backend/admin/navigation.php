@@ -247,15 +247,6 @@
                     </li>
                 </ul>
             </li>
-         
-
-            <!-- DORMITORY -->
-            <li class="nav-item <?php if ($page_name == 'dormitory') echo 'active'; ?> ">
-                <a href="<?php echo base_url(); ?>index.php?admin/dormitory">
-                    <i class="entypo-home"></i>
-                    <span><?php echo ucwords(get_phrase('dormitory')); ?></span>
-                </a>
-            </li>
 
             <!-- NOTICEBOARD -->
             <li class="nav-item <?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
@@ -288,12 +279,6 @@
                     <li class="dropdown-item <?php if ($page_name == 'system_settings') echo 'active'; ?> ">
                         <a href="<?php echo base_url(); ?>index.php?admin/system_settings">
                             <span><i class="entypo-dot"></i> <?php echo ucwords(get_phrase('general_settings')); ?></span>
-                        </a>
-                    </li>
-                    <li class="dropdown-item <?php if ($page_name == 'data_settings') echo 'active'; ?> ">
-                        <!--<a href="<?php// echo base_url(); ?>index.php?admin/data_settings">-->
-                        <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_data/');">
-                            <span><i class="entypo-dot"></i> <?php echo ucwords(get_phrase('data_settings')); ?></span>
                         </a>
                     </li>
                     <li class="dropdown-item <?php if ($page_name == 'sms_settings') echo 'active'; ?> ">

@@ -120,12 +120,12 @@
                     </li>
 
                     <!-- CLASS ROUTINE -->
-                    <!-- <li class="nav-item <?php/// if ($page_name == 'class_routine') echo 'active'; ?> ">
-                        <a href="<?php// echo base_url(); ?>index.php?<?php// echo $account_type; ?>/class_routine">
+                    <li class="nav-item <?php if ($page_name == 'class_routine') echo 'active'; ?> ">
+                        <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/class_routine">
                             <i class="entypo-target"></i>
-                            <span><?php //echo get_phrase('class_routine'); ?></span>
+                            <span><?php echo get_phrase('class_routine'); ?></span>
                         </a>
-                    </li> -->
+                    </li>
 
                     <li class="nav-item dropdown <?php if ($page_name == 'class_routine') echo 'opened active'; ?> ">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -190,15 +190,6 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-
-
-                    <!-- LIBRARY -->
-                    <li class="nav-item <?php if ($page_name == 'book') echo 'active'; ?> ">
-                        <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/book">
-                            <i class="entypo-book"></i>
-                            <span><?php echo get_phrase('library'); ?></span>
-                        </a>
                     </li>
 
                    
